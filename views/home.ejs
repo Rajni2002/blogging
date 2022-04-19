@@ -1,0 +1,25 @@
+<%- include("./partials/header"); -%>
+
+<h1>Home - Blogs</h1>
+
+<p><%=homeContent%></p>
+
+<div class="post-section">
+    <% posts.forEach(function(post){ %>
+    <div class="post">
+        <% console.log(post.title) %>
+        <% console.log(post.content) %>
+        <h3><%= post.title%></h3>
+        <p><%= post.content.substring(0,100) + " ...."%><a href="/posts/<%= post._id%>">Read more</a> </p>
+    </div>
+    <% }); %>
+</div>
+
+
+<%- include("./partials/footer"); -%>
+<!-- <% for(let i = 0; i < posts.length ; i++) { %>
+    <div class="post">
+        <h3><%= posts[i].title%></h3>
+        <p><%= posts[i].content%></p>
+    </div>
+    <% } %> -->
